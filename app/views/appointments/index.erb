@@ -1,0 +1,10 @@
+<h1>INDEX APPOINTMENT PAGE</h1>
+
+<div>
+  <% @appointments.each do |a|%>
+    <h4><%= a.name%></h4>
+    <p>technician: <%= a.technician%></p>
+    <p><%= a.appointment%></p>
+    
+  <% end %>
+</div>
