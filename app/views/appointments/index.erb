@@ -1,10 +1,17 @@
-<h1>INDEX APPOINTMENT PAGE</h1>
+<h1>Appointment Index</h1>
+<p>Current Appointments</p>
 
 <div>
+
   <% @appointments.each do |a|%>
+    <% if User.find(session[:user_id]) == a.user %>
     <h4><%= a.name%></h4>
-    <p>technician: <%= a.technician%></p>
+    <p>Technician: <%= a.technician%></p>
     <p><%= a.appointment%></p>
-    
+    <p><a href="/appointments/<%= a.id %>/edit">Edit</a></p>
+    <% end %>
   <% end %>
+
+  <a href="http://127.0.0.1:9393/appointments/new">BOOK NOW</a> 
+  <p><a href="http://127.0.0.1:9393/logout">LOG OUT</a> </p>
 </div>

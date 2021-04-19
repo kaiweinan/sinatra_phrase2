@@ -1,1 +1,15 @@
 <h1>EDIT APPOINTMENT PAGE</h1>
+<form action="/appointments/<%= @appointment.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+<p>Name: <input type="text" name="appointments[name]" value="<%= @appointment.name%>" /></p>
+<p>Technician: <input type="text" name="appointments[technician]" value="<%= @appointment.technician%>" /></p>
+<p>Appointment: <input type="datetime" name="appointments[appointment]" value="<%= @appointment.appointment%>"/></p>
+
+  <input type="submit" value="reschedule">
+</form>
+
+<br/>
+    <form method="POST" action="/appointments/<%= @appointment.id %>/delete">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Cancel this appointment">
+    </form>
